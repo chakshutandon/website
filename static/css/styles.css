@@ -230,23 +230,23 @@ section.yellow .progress .bg-blue {
   background-color: #c19c43;
 }
 
-section.fabric {
+.fabric {
   background-image: url("../images/fabric.png");
 }
 
-section.blue600 {
-  background-color: #00ACC1;
-  color: #fff;
+.blue600 {
+  background-color: #00ACC1 !important;
+  color: #fff !important;
 }
 
-section.blue400 {
-  background-color: #26C6DA;
-  color: #fff;
+.blue400 {
+  background-color: #26C6DA !important;
+  color: #fff !important;
 }
 
-section.blue200 {
-  background-color: #80deea;
-  color: #fff;
+.blue200 {
+  background-color: #80deea !important;
+  color: #fff !important;
 }
 
 .progress {
@@ -261,6 +261,7 @@ section.blue200 {
 .card {
   border-radius: 6px;
   border: none;
+  background-color: #fff;
 }
 
 #timeline {
