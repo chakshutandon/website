@@ -1,0 +1,17 @@
+{
+	"title" : "Education",
+	"education" : [
+		{
+			"school" : "Rutgers University, New Brunswick",
+			"description": "Recipient of two merit-based scholarships pursuing a double major with an Honors College curriculum.",
+			"degrees" : [
+				{
+					"name": "B.Sc. Computer Science"
+				},
+				{
+					"name": "B.A. Statistics"
+				}
+			]
+		}
+	]
+}

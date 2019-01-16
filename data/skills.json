@@ -1,0 +1,25 @@
+{
+	"title" : "Skills",
+	"skills" : [
+		{
+			"name" : "Adobe Suite",
+			"icon": "fab fa-adobe"
+		},
+		{
+			"name" : "Android",
+			"icon": "fab fa-android"
+		},
+		{
+			"name" : "Angular",
+			"icon": "fab fa-angular"
+		},
+		{
+			"name" : "Amazon Web Services",
+			"icon": "fab fa-aws"
+		},
+		{
+			"name" : "Adobe Suite",
+			"icon": "fab fa-adobe"
+		}
+	]
+}

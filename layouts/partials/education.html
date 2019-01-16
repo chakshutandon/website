@@ -1,0 +1,25 @@
+{{ $education := .Site.Data.education }}
+
+<section id="education" class="fabric blue200">
+  <h2 class="heading">{{ $education.title }}</h2>
+  <div id="timeline">
+      {{ range $index, $element := $education.education }}
+      <div class="timeline-item clearfix">
+        <div class="timeline-icon"></div>
+        
+        <div class="timeline-content {{ if eq (mod $index 2) 0 }} right {{ end }}">
+          <h6 class="h3 my-2">{{ $element.school }}</h6>
+            <p class="">{{ $element.description }}</p>
+            
+            <ul>
+              {{ range $j, $degree := $element.degrees }}
+              <li>{{ $degree.name }}</li>
+              {{ end }}
+            </ul>
+            
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  
+</section>

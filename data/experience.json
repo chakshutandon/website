@@ -1,0 +1,20 @@
+{
+	"title" : "Experience",
+	"experience" : [
+		{
+			"timeperiod" : "Nov 2016 - Sep 2018",
+			"company" : "The JCK Foundation, Inc.",
+			"description" : "Worked as DevOps Engineer to build and automate service stack using microservices and cloud infrastructure."
+		},
+		{
+			"timeperiod" : "Jan 2017 - Present",
+			"company" : "Disrupt Tech Labs, LLC",
+			"description" : "Cofounder and Technical Director of initiative to provide social equity through technology. Planned software architecture and supported agile development."
+		},
+		{
+			"timeperiod" : "Sep 2017 - Present",
+			"company" : "Dep. of Mathematics, Rutgers University",
+			"description" : "Working as a grader to help students understand challenging concepts in probability and linear algebra."
+		}
+	]
+}

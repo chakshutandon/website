@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+{{ partial "sidebar.html" . }}
+
+<div class="main-content">
+	{{ if .Site.Data.experience }}{{ partial "experience.html" . }}{{ end }}
+	<!-- <hr>
+	{{ if .Site.Data.skills }}{{ partial "skills.html" . }}{{ end }} -->
+	<hr>
+	{{ if .Site.Data.education }}{{ partial "education.html" . }}{{ end }}
+	<hr>
+</div>
+
+<div class="main-content">
+	{{ partial "contact.html" . }}		
+</div>
+
+{{ partial "footer-scripts.html" . }}
+	

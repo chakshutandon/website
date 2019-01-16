@@ -1,0 +1,14 @@
+{
+	"Email": {
+		"icon": "fas fa-at",
+		"link": "#contact"
+	},
+	"GitHub": {
+		"icon": "fab fa-github",
+		"link": "https://github.com/chakshutandon"
+	},
+	"Resume": {
+		"icon": "fas fa-file-pdf",
+		"link": "./chakshutandon-resume.pdf"
+	}
+}

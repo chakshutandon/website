@@ -1,0 +1,7 @@
+title = "@chakshutandon"
+baseURL = ""
+languageCode = "en-us"
+theme = "uilite"
+
+DefaultContentLanguage = "en"
+enableRobotsTXT = true
