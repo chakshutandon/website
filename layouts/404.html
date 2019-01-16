@@ -1,0 +1,44 @@
+{{ $config := .Site.Data.config }}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>
+        {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+        {{ if .IsHome }}
+                {{ .Site.Title }}
+        {{ else if .Params.heading }}
+                {{ .Params.heading }}
+        {{ else }}
+                {{ .Title }} | {{ .Site.Title }}
+        {{ end }}
+    </title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="images/{{ $config.favicon }}" />
+    
+    <!-- Meta tags -->
+	<meta name="author" content="{{ $config.author }}">
+	<meta name="theme-color" content="#000000">
+
+	{{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+	{{ end }}
+	
+	{{ partial "seo_schema.html" . }}
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132541176-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-132541176-1');
+    </script>
+</head>
+<body>
+    <h1>simple 404 error page</h1>
+</body>
