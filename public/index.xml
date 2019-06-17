@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>@chakshutandon</title>
-    <link>/index.xml</link>
+    <link>https://chakshutandon.com/index.xml</link>
     <description>Recent content on @chakshutandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chakshutandon.com/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

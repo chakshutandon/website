@@ -1,5 +1,6 @@
 title = "@chakshutandon"
-baseURL = ""
+description = "Chakshu Tandon's personal homepage."
+baseURL = "https://chakshutandon.com"
 languageCode = "en-us"
 theme = "uilite"
 
