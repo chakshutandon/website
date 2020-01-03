@@ -2,19 +2,24 @@
 	"title" : "Experience",
 	"experience" : [
 		{
-			"timeperiod" : "Nov 2016 - Sep 2018",
-			"company" : "The JCK Foundation, Inc.",
-			"description" : "Worked as DevOps Engineer to build and automate service stack using microservices and cloud infrastructure."
+			"timeperiod" : "Jun 2019 - Aug 2019",
+			"company" : "Sirius XM Radio, Inc.",
+			"description" : "DevOps Intern working on software test automation, automation of enterprise user management, and JIRA project management capabilities."
 		},
 		{
-			"timeperiod" : "Jan 2017 - Present",
-			"company" : "Disrupt Tech Labs, LLC",
-			"description" : "Cofounder and Technical Director of initiative to provide social equity through technology. Planned software architecture and supported agile development."
+			"timeperiod" : "Nov 2016 - Sep 2018",
+			"company" : "The JCK Foundation, Inc.",
+			"description" : "DevOps Engineer working to setup automation for services on top of cloud infrastructure. Reduced operational costs and downtime for external facing services adding analytics and auditing."
+		},
+		{
+			"timeperiod" : "Jan 2017 - Apr 2019",
+			"company" : "Disrupt Tech Labs, LLC.",
+			"description" : "Cofounder and Technical Director of initiative to provide social equity through technology. Played an architect role in medical application for pediatric clinical therapy and led agile development teams."
 		},
 		{
 			"timeperiod" : "Sep 2017 - Present",
-			"company" : "Dep. of Mathematics, Rutgers University",
-			"description" : "Working as a grader to help students understand challenging concepts in probability and linear algebra."
+			"company" : "Department of Mathematics, Rutgers University",
+			"description" : "Grader helping facilitate understanding of challenging concepts in probability and linear algebra."
 		}
 	]
 }

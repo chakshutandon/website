@@ -6,3 +6,4 @@ theme = "uilite"
 
 DefaultContentLanguage = "en"
 enableRobotsTXT = true
+disableKinds = ["taxonomy", "taxonomyTerm"]

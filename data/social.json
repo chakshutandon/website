@@ -3,9 +3,9 @@
 		"icon": "fas fa-at",
 		"link": "#contact"
 	},
-	"GitHub": {
-		"icon": "fab fa-github",
-		"link": "https://github.com/chakshutandon"
+	"GitLab": {
+		"icon": "fab fa-gitlab",
+		"link": "https://gitlab.com/chakshutandon"
 	},
 	"Resume": {
 		"icon": "fas fa-file-pdf",

@@ -234,6 +234,12 @@ section.yellow .progress .bg-blue {
   background-image: url("../images/fabric.png");
 }
 
+.bg-gradient {
+  background: rgb(0,172,193) !important;
+  background: linear-gradient(165deg, rgba(0,172,193,1) 0%, rgba(53,213,98,0.6197829473586309) 100%) !important;
+  color: #fff !important;  
+}
+
 .blue600 {
   background-color: #00ACC1 !important;
   color: #fff !important;
