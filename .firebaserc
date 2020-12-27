@@ -1,5 +1,6 @@
 {
   "projects": {
+    "staging": "chakshutandon-website-staging",
     "production": "chakshutandon-website"
   }
 }

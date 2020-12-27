@@ -23,10 +23,25 @@ build:
     paths: ['public']
     expire_in: 2 hrs
 
-deploy:
+staging:
+  stage: deploy
+  environment:
+    name: staging
+  only:
+    - master
+  image: node:alpine
+  dependencies:
+    - build
+  script:
+    - npm install -g firebase-tools
+    - firebase use --token $FIREBASE_DEPLOY_KEY staging
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, Build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
+
+prod:
   stage: deploy
   environment:
     name: prod
+  when: manual
   only:
     - master
   image: node:alpine
