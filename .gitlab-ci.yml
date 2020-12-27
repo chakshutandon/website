@@ -34,8 +34,8 @@ staging:
     - build
   script:
     - npm install -g firebase-tools
-    - firebase use --token $FIREBASE_DEPLOY_KEY staging
-    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, Build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
+    - firebase use staging --token $FIREBASE_DEPLOY_KEY
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, Job $CI_JOB_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
 
 prod:
   stage: deploy
@@ -49,5 +49,5 @@ prod:
     - build
   script:
     - npm install -g firebase-tools
-    - firebase use --token $FIREBASE_DEPLOY_KEY production
-    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, Build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
+    - firebase use production --token $FIREBASE_DEPLOY_KEY
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, Job $CI_JOB_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
