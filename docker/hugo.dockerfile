@@ -1,4 +1,5 @@
 FROM alpine:3.13.6 AS base
+ARG DATE_MODIFIED="Sat Sep 18 23:02:42 EDT 2021"
 ARG VERSION=0.88.1
 RUN apk update && apk add curl
 RUN curl -L -o /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz \
