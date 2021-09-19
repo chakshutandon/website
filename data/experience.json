@@ -2,6 +2,11 @@
 	"title" : "Experience",
 	"experience" : [
 		{
+			"timeperiod" : "Jun 2020 - Present",
+			"company" : "Taos, an IBM Company",
+			"description" : "Senior DevOps Engineer and Pod Lead working on cloud-first solutions across diverse verticals."
+		},
+		{
 			"timeperiod" : "Jun 2019 - Aug 2019",
 			"company" : "Sirius XM Radio, Inc.",
 			"description" : "DevOps Intern working on software test automation, automation of enterprise user management, and JIRA project management capabilities."
