@@ -38,6 +38,7 @@ deploy:staging:
   environment:
     name: staging
   script:
+    - ls ./bin
     - ./bin/firebase
   needs:
     - install
