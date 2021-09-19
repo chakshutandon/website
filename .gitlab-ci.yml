@@ -1,48 +1,57 @@
+image: alpine:3.13.6
+
 stages:
+  - prepare
   - build
   - deploy
 
-image: alpine:3.13.6
+prepare:hugo:
+  image: docker:stable
+  services:
+    - docker:dind
+  stage: prepare
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/$CI_PROJECT_PATH/hugo:latest -f docker/hugo.dockerfile .
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/hugo:latest
+  only:
+    changes:
+      - docker/hugo.dockerfile
 
-variables:
-  HUGO_VERSION: 0.88.1
-  FIREBASE_VERSION: 9.18.0
+prepare:firebase:
+  image: docker:stable
+  services:
+    - docker:dind
+  stage: prepare
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/$CI_PROJECT_PATH/firebase:latest -f docker/firebase.dockerfile .
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/firebase:latest
+  only:
+    changes:
+      - docker/firebase.dockerfile
 
-cache:
-  key: $CI_COMMIT_REF_SLUG
-  paths:
-    - bin/
-
-install:
+build:hugo:
+  image: $CI_REGISTRY/$CI_PROJECT_PATH/hugo
   stage: build
   script:
-    - apk update && apk add curl
-    - mkdir bin
-    - curl -L -o /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
-    - mkdir /tmp/hugo; tar -xvf /tmp/hugo.tar.gz -C /tmp/hugo; mv /tmp/hugo/hugo bin/hugo; chmod +x bin/hugo
-    - curl -L -o bin/firebase https://firebase.tools/bin/linux/v${FIREBASE_VERSION}
-    - chmod +x bin/firebase
-
-build:
-  stage: build
-  script:
-    - ./bin/hugo
+    - hugo
   needs:
-    - install
+    - prepare:hugo
   artifacts:
     paths: ['public']
     expire_in: 2 hrs
 
-deploy:staging:
-  stage: deploy
-  environment:
-    name: staging
-  script:
-    - ls ./bin
-    - ./bin/firebase
-  needs:
-    - install
-    - build
+# deploy:staging:
+#   stage: deploy
+#   environment:
+#     name: staging
+#   script:
+#     - ls ./bin
+#     - ./bin/firebase
+#   needs:
+#     - install
+#     - build
   # only:
   #   - master
 
