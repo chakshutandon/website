@@ -36,8 +36,6 @@ build:hugo:
   stage: build
   script:
     - hugo
-  needs:
-    - prepare:hugo
   artifacts:
     paths: ['public']
     expire_in: 2 hrs
