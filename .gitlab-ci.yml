@@ -7,26 +7,25 @@ image: alpine:3.13.6
 variables:
   HUGO_VERSION: 0.88.1
   FIREBASE_VERSION: 9.18.0
-  BIN_DIR: /usr/local/bin
 
 cache:
   key: $CI_COMMIT_REF_SLUG
   paths:
-    - ${BIN_DIR}
+    - bin/
 
 install:
   stage: build
   script:
     - apk update && apk add curl
     - curl -L -o /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
-    - mkdir /tmp/hugo; tar -xvf /tmp/hugo.tar.gz -C /tmp/hugo; mv /tmp/hugo/hugo ${BIN_DIR}/hugo; chmod +x ${BIN_DIR}/hugo
-    - curl -L -o ${BIN_DIR}/firebase https://firebase.tools/bin/linux/v${FIREBASE_VERSION}
-    - chmod +x ${BIN_DIR}/firebase
+    - mkdir /tmp/hugo; tar -xvf /tmp/hugo.tar.gz -C /tmp/hugo; mv /tmp/hugo/hugo ./bin/hugo; chmod +x ./bin/hugo
+    - curl -L -o ./bin/firebase https://firebase.tools/bin/linux/v${FIREBASE_VERSION}
+    - chmod +x ./bin/firebase
 
 build:
   stage: build
   script:
-    - hugo
+    - ./bin/hugo
   needs:
     - install
   artifacts:
@@ -38,7 +37,7 @@ deploy:staging:
   environment:
     name: staging
   script:
-    - firebase
+    - ./bin/firebase
   needs:
     - install
     - build
