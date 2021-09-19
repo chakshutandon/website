@@ -61,7 +61,7 @@ deploy:prod:
   extends: .deploy:firebase
   stage: deploy
   variables:
-    ENVIRONMENT: prod
+    ENVIRONMENT: production
   when: manual
   only:
     - master
