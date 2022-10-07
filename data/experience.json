@@ -2,23 +2,28 @@
 	"title" : "Experience",
 	"experience" : [
 		{
-			"timeperiod" : "Jun 2020 - Present",
-			"company" : "Taos, an IBM Company",
+			"timeperiod" : "Apr 2022 - Present",
+			"company" : "Google",
+			"description" : "System Development Engineer writing infrastructure services for managing large fleets of non-standard devices."
+		},
+		{
+			"timeperiod" : "Jun 2020 - Mar 2022",
+			"company" : "IBM",
 			"description" : "Senior DevOps Engineer and Pod Lead working on cloud-first solutions across diverse verticals."
 		},
 		{
 			"timeperiod" : "Jun 2019 - Aug 2019",
-			"company" : "Sirius XM Radio, Inc.",
+			"company" : "Sirius XM Radio",
 			"description" : "DevOps Intern working on software test automation, automation of enterprise user management, and JIRA project management capabilities."
 		},
 		{
 			"timeperiod" : "Nov 2016 - Sep 2018",
-			"company" : "The JCK Foundation, Inc.",
+			"company" : "The JCK Foundation",
 			"description" : "DevOps Engineer working to setup automation for services on top of cloud infrastructure. Reduced operational costs and downtime for external facing services adding analytics and auditing."
 		},
 		{
 			"timeperiod" : "Jan 2017 - Apr 2018",
-			"company" : "Disrupt Tech Labs, LLC.",
+			"company" : "Disrupt Tech Labs",
 			"description" : "Cofounder and Technical Director of initiative to provide social equity through technology. Played an architect role in medical application for pediatric clinical therapy and led agile development teams."
 		},
 		{
