@@ -53,7 +53,7 @@ deploy:staging:
     name: review/$CI_COMMIT_SHORT_SHA
     deployment_tier: staging
   script:
-    - firebase hosting:channel:deploy -m "Pipeline $CI_PIPELINE_ID, Job $CI_JOB_ID" --non-interactive $CI_COMMIT_SHORT_SHA
+    - firebase hosting:channel:deploy --non-interactive $CI_COMMIT_SHORT_SHA
 
 deploy:prod:
   extends: .deploy:firebase
