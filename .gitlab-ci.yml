@@ -59,8 +59,11 @@ deploy:staging:
 deploy:prod:
   extends: .deploy:firebase
   stage: deploy
-  variables:
-    ENVIRONMENT: production
+  environment:
+    name: production
+    url: https://chakshutandon.com
+  script:
+    - firebase deploy --only hosting -m "Pipeline $CI_PIPELINE_ID, Job $CI_JOB_ID" --non-interactive
   when: manual
   only:
     - master
