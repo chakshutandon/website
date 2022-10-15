@@ -1,7 +1,7 @@
 image: alpine:3.13.6
 
 stages:
-  - prepare
+  - init
   - build
   - deploy
 
@@ -16,24 +16,21 @@ stages:
 
 .deploy:firebase:
   image: $CI_REGISTRY/$CI_PROJECT_PATH/firebase
-  environment:
-    name: ${ENVIRONMENT}
-  script:
-    - firebase use ${ENVIRONMENT} --token $FIREBASE_DEPLOY_KEY
-    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, Job $CI_JOB_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
+  before_script:
+    - export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACCOUNT_KEY
 
-prepare:hugo:
+init:hugo:
   extends: .build:docker
-  stage: prepare
+  stage: init
   variables:
     IMAGE_NAME: hugo
   only:
     changes:
       - docker/hugo.dockerfile
 
-prepare:firebase:
+init:firebase:
   extends: .build:docker
-  stage: prepare
+  stage: init
   variables:
     IMAGE_NAME: firebase
   only:
@@ -52,10 +49,12 @@ build:
 deploy:staging:
   extends: .deploy:firebase
   stage: deploy
-  variables:
-    ENVIRONMENT: staging
-  only:
-    - master
+  environment:
+    name: review/$CI_COMMIT_SHORT_SHA
+    deployment_tier: staging
+    url: $URL
+  script:
+    - URL=$(firebase hosting:channel:deploy $CI_COMMIT_SHORT_SHA 2> /dev/null | grep "hosting:channel:.*: (https:\/\/[^\s]+)")
 
 deploy:prod:
   extends: .deploy:firebase

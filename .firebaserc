@@ -1,6 +1,5 @@
 {
   "projects": {
-    "staging": "chakshutandon-website-staging",
-    "production": "chakshutandon-website"
+    "default": "chakshutandon-website"
   }
 }
