@@ -52,8 +52,9 @@ deploy:staging:
   environment:
     name: review/$CI_COMMIT_SHORT_SHA
     deployment_tier: staging
+    auto_stop_in: 2 hours
   script:
-    - firebase hosting:channel:deploy --non-interactive $CI_COMMIT_SHORT_SHA
+    - firebase hosting:channel:deploy --non-interactive $CI_COMMIT_SHORT_SHA --expires 2h
 
 deploy:prod:
   extends: .deploy:firebase
