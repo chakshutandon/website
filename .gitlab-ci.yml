@@ -54,7 +54,7 @@ deploy:staging:
     deployment_tier: staging
     url: $URL
   script:
-    - URL=$(firebase hosting:channel:deploy $CI_COMMIT_SHORT_SHA 2> /dev/null | grep "hosting:channel:.*: (https:\/\/[^\s]+)")
+    - URL=$(firebase hosting:channel:deploy $CI_COMMIT_SHORT_SHA 2> /dev/null | grep "hosting:channel.*(https:\/\/[^\s]+)")
 
 deploy:prod:
   extends: .deploy:firebase
